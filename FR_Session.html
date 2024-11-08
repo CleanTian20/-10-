@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ECharts Example</title>
+  <!-- 引入 ECharts JavaScript 文件 -->
+  <script src="echarts.min.js"></script>
+</head>
+<body>
+  <!-- 为 ECharts 准备一个 DOM -->
+  <div id="main" style="width: 100%; height: 550px;"></div>
+
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+  title: {
+    text: '10月渠道流量-FR'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  },
+  legend: {
+    data: ['KOL+Social+BD', 'EDM', 'Direct', 'Organic', 'referral', 'Meta_ads', 'Google_ads', 'Google_Ads_Spending', 'Meta_Ads_Spending']
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '5%',
+    responsive: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      boundaryGap: false,
+      data: Array.from({length: 31}, (_, i) => `Day ${i + 1}`)
+    }
+  ],
+  yAxis: [
+    {
+        type: 'value',
+        name: 'Traffic',
+        max: 15000,
+        axisLabel: {
+            formatter: '{value}'
+        }
+    },
+    {
+        type: 'value',
+        name: 'Spending',
+        max: 8000,
+        axisLabel: {
+            formatter: '{value} $',
+        },
+        position: 'right'
+    }
+  ],
+  series: [
+    
+    {
+      name: 'KOL+Social+BD',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      data: [152, 124, 1681, 408, 253, 237, 458, 1351, 799, 537, 300, 449, 267, 264, 250, 197, 252, 206, 215, 212, 188, 188, 209, 159, 176, 160, 215, 190, 180, 156, 222]
+    },
+    
+    {
+      name: 'EDM',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      data: [75, 99, 3961, 768, 569, 331, 230, 188, 151, 3192, 502, 426, 239, 203, 180, 474, 666, 208, 211, 149, 455, 203, 139, 78, 109, 80, 91, 102, 71, 786, 203]
+    },
+    
+    {
+      name: 'Direct',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      data: [618, 590, 717, 618, 521, 562, 532, 1001, 860, 1745, 1191, 1045, 1250, 1062, 2511, 2207, 1239, 965, 743, 807, 823, 781, 629, 837, 636, 610, 621, 763, 682, 575, 721]
+    },
+    
+    {
+      name: 'Organic',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      data: [2699, 2478, 2738, 2440, 2457, 2517, 2668, 6396, 5608, 3658, 2811, 2556, 2665, 2789, 3509, 3264, 2593, 2358, 2520, 2703, 2721, 2595, 2354, 2358, 2350, 2468, 2451, 2789, 2523, 2391, 2246]
+    },
+    
+    {
+      name: 'referral',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      data: [390, 337, 636, 441, 329, 256, 570, 885, 660, 740, 508, 493, 460, 589, 658, 751, 781, 689, 315, 249, 413, 394, 288, 369, 321, 267, 249, 304, 298, 281, 304]
+    },
+    
+    {
+      name: 'Meta_ads',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      data: [146, 112, 946, 1029, 847, 814, 622, 604, 527, 1013, 1018, 1195, 1148, 1229, 1217, 1437, 1931, 1484, 1225, 1350, 1257, 1305, 772, 648, 784, 552, 791, 749, 970, 471, 1794]
+    },
+    
+    {
+      name: 'Google_ads',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      data: [1266, 1286, 1390, 1289, 1345, 1557, 1424, 1813, 1368, 3124, 3074, 3294, 3893, 3439, 3009, 2744, 2779, 2912, 3315, 3363, 2949, 2807, 2282, 2288, 2192, 2440, 2781, 2587, 2347, 1940, 2194]
+    },
+    {
+      name: 'Google Ads Spending',
+      yAxisIndex:1,
+      type: 'line',
+      color:'#A3067C',
+      data: [89, 95, 96, 92, 92, 93, 86, 81, 81, 327, 325, 308, 311, 311, 306, 203, 219, 254, 222, 223, 228, 222, 154, 153, 148, 146, 143, 141, 136, 90, 213],
+      lineStyle: {
+        type: 'dashed'  // 设置为虚线
+      },
+      symbol: 'none',  // 不显示标记点
+      // smooth: true  // 如果需要平滑曲线
+    },
+    {
+      name: 'Meta Ads Spending',
+      yAxisIndex:1,
+      type: 'line',
+      color:'#22529E',
+      data: [48, 49, 121, 128, 126, 122, 120, 3128, 3452, 403, 436, 435, 456, 437, 443, 484, 476, 464, 466, 500, 481, 449, 316, 302, 249, 225, 265, 247, 193, 115, 315],
+      lineStyle: {
+        type: 'dashed'  // 设置为虚线
+      },
+      symbol: 'none',  // 不显示标记点
+      // smooth: true  // 如果需要平滑曲线
+    }
+    
+  ]
+};
+
+    // 使用配置项和数据显示图表
+    myChart.setOption(option);
+  </script>
+</body>
+</html>
