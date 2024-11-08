@@ -4,21 +4,21 @@
 <head>
   <meta charset="utf-8">
   <title>ECharts Example</title>
-  <!-- ÒıÈë ECharts JavaScript ÎÄ¼ş -->
+  <!-- å¼•å…¥ ECharts JavaScript æ–‡ä»¶ -->
   <script src="echarts.min.js"></script>
 </head>
 <body>
-  <!-- Îª ECharts ×¼±¸Ò»¸ö DOM -->
+  <!-- ä¸º ECharts å‡†å¤‡ä¸€ä¸ª DOM -->
   <div id="main" style="width: 100%; height: 550px;"></div>
 
   <script type="text/javascript">
-    // »ùÓÚ×¼±¸ºÃµÄdom£¬³õÊ¼»¯echartsÊµÀı
+    // åŸºäºå‡†å¤‡å¥½çš„domï¼Œåˆå§‹åŒ–echartså®ä¾‹
     var myChart = echarts.init(document.getElementById('main'));
 
-    // Ö¸¶¨Í¼±íµÄÅäÖÃÏîºÍÊı¾İ
+    // æŒ‡å®šå›¾è¡¨çš„é…ç½®é¡¹å’Œæ•°æ®
     var option = {
   title: {
-    text: '10ÔÂÇşµÀÁ÷Á¿-FR'
+    text: '10æœˆæ¸ é“æµé‡-FR'
   },
   tooltip: {
     trigger: 'axis',
@@ -161,10 +161,10 @@
       color:'#A3067C',
       data: [89, 95, 96, 92, 92, 93, 86, 81, 81, 327, 325, 308, 311, 311, 306, 203, 219, 254, 222, 223, 228, 222, 154, 153, 148, 146, 143, 141, 136, 90, 213],
       lineStyle: {
-        type: 'dashed'  // ÉèÖÃÎªĞéÏß
+        type: 'dashed'  // è®¾ç½®ä¸ºè™šçº¿
       },
-      symbol: 'none',  // ²»ÏÔÊ¾±ê¼Çµã
-      // smooth: true  // Èç¹ûĞèÒªÆ½»¬ÇúÏß
+      symbol: 'none',  // ä¸æ˜¾ç¤ºæ ‡è®°ç‚¹
+      // smooth: true  // å¦‚æœéœ€è¦å¹³æ»‘æ›²çº¿
     },
     {
       name: 'Meta Ads Spending',
@@ -173,16 +173,16 @@
       color:'#22529E',
       data: [48, 49, 121, 128, 126, 122, 120, 3128, 3452, 403, 436, 435, 456, 437, 443, 484, 476, 464, 466, 500, 481, 449, 316, 302, 249, 225, 265, 247, 193, 115, 315],
       lineStyle: {
-        type: 'dashed'  // ÉèÖÃÎªĞéÏß
+        type: 'dashed'  // è®¾ç½®ä¸ºè™šçº¿
       },
-      symbol: 'none',  // ²»ÏÔÊ¾±ê¼Çµã
-      // smooth: true  // Èç¹ûĞèÒªÆ½»¬ÇúÏß
+      symbol: 'none',  // ä¸æ˜¾ç¤ºæ ‡è®°ç‚¹
+      // smooth: true  // å¦‚æœéœ€è¦å¹³æ»‘æ›²çº¿
     }
     
   ]
 };
 
-    // Ê¹ÓÃÅäÖÃÏîºÍÊı¾İÏÔÊ¾Í¼±í
+    // ä½¿ç”¨é…ç½®é¡¹å’Œæ•°æ®æ˜¾ç¤ºå›¾è¡¨
     myChart.setOption(option);
   </script>
 </body>
