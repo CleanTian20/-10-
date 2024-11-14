@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ECharts Example</title>
+  <!-- 引入 ECharts JavaScript 文件 -->
+  <script src="echarts.min.js"></script>
+</head>
+<body>
+  <!-- 为 ECharts 准备一个 DOM -->
+  <div id="main" style="width: 100%; height: 550px;"></div>
+
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+      title: {
+        text: '10_UK'
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985'
+          }
+        }
+      },
+      legend: {
+        data: ['Google Ads', 'Meta Ads', 'referral', 'Organic', 'Direct', 'EDM', 'KOL+Social+BD', 'Google Branding', 'Google Conversion', 'Meta Traffic+Branding', 'Meta Conversion']
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {}
+        }
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        responsive: true
+      },
+      xAxis: [
+        {
+          type: 'category',
+          boundaryGap: false,
+          data: Array.from({length: 31}, (_, i) => `Day ${i + 1}`)
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          name: 'Traffic',
+          max: 15500,
+          axisLabel: {
+            formatter: '{value}'
+          }
+        },
+        {
+          type: 'value',
+          name: 'Spending',
+          max: 2500,
+          axisLabel: {
+            formatter: '{value} $',
+          },
+          position: 'right'
+        }
+      ],
+      series: [
+        
+        {
+          name: 'KOL+Social+BD',
+          type: 'line',
+          stack: 'Total',
+          smooth: true,
+          areaStyle: {},
+          lineStyle: {},
+          
+          
+          yAxisIndex: 0,
+          data: [193, 86, 1750, 895, 219, 126, 1178, 971, 193, 721, 276, 135, 391, 369, 149, 134, 89, 2621, 691, 688, 736, 294, 233, 140, 640, 807, 282, 151, 130, 106, 91]
+        },
+        
+        {
+          name: 'EDM',
+          type: 'line',
+          stack: 'Total',
+          smooth: true,
+          areaStyle: {},
+          lineStyle: {},
+          
+          
+          yAxisIndex: 0,
+          data: [38, 38, 1800, 225, 106, 68, 57, 137, 128, 1895, 213, 135, 109, 74, 86, 73, 143, 45, 33, 42, 60, 62, 37, 46, 185, 174, 79, 59, 68, 129, 51]
+        },
+        
+        {
+          name: 'Direct',
+          type: 'line',
+          stack: 'Total',
+          smooth: true,
+          areaStyle: {},
+          lineStyle: {},
+          
+          
+          yAxisIndex: 0,
+          data: [433, 504, 669, 506, 508, 515, 537, 1149, 899, 1091, 956, 873, 934, 836, 1825, 1654, 822, 762, 597, 690, 788, 573, 557, 513, 5026, 9077, 6068, 3644, 2977, 2531, 2127]
+        },
+        
+        {
+          name: 'Organic',
+          type: 'line',
+          stack: 'Total',
+          smooth: true,
+          areaStyle: {},
+          lineStyle: {},
+          
+          
+          yAxisIndex: 0,
+          data: [1417, 1359, 1267, 1266, 1199, 1421, 1544, 2383, 2055, 1648, 1303, 1362, 1381, 1364, 1358, 1273, 1184, 1255, 1256, 1377, 1327, 1235, 1255, 1136, 1239, 1304, 1145, 1197, 1232, 1137, 1030]
+        },
+        
+        {
+          name: 'referral',
+          type: 'line',
+          stack: 'Total',
+          smooth: true,
+          areaStyle: {},
+          lineStyle: {},
+          
+          
+          yAxisIndex: 0,
+          data: [68, 90, 97, 84, 76, 77, 108, 146, 123, 130, 127, 101, 299, 203, 137, 118, 132, 104, 68, 99, 133, 115, 114, 114, 107, 110, 111, 174, 86, 113, 123]
+        },
+        
+        {
+          name: 'Meta Ads',
+          type: 'line',
+          stack: 'Total',
+          smooth: true,
+          areaStyle: {},
+          lineStyle: {},
+          
+          
+          yAxisIndex: 0,
+          data: [358, 327, 686, 558, 485, 500, 466, 307, 340, 464, 742, 520, 567, 463, 771, 622, 859, 724, 590, 843, 546, 493, 547, 340, 444, 491, 546, 1271, 178, 184, 835]
+        },
+        
+        {
+          name: 'Google Ads',
+          type: 'line',
+          stack: 'Total',
+          smooth: true,
+          areaStyle: {},
+          lineStyle: {},
+          
+          
+          yAxisIndex: 0,
+          data: [955, 979, 912, 994, 937, 526, 443, 1154, 1016, 1006, 941, 980, 1082, 987, 957, 968, 1073, 1103, 1345, 1639, 1376, 1340, 1500, 1158, 1325, 1350, 1289, 1294, 1212, 1160, 868]
+        },
+        
+        {
+          name: 'Google Branding',
+          type: 'line',
+          
+          smooth: false,
+          
+          lineStyle: {'type': 'dashed'},
+          symbol: 'none',
+          color: '#523A9D',
+          yAxisIndex: 1,
+          data: [1619, 1594, 1543, 1570, 1548, 45, 4, 2145, 2152, 861, 778, 767, 760, 625, 624, 608, 575, 691, 722, 736, 707, 679, 679, 441, 899, 909, 889, 861, 778, 941, 643]
+        },
+        
+        {
+          name: 'Google Conversion',
+          type: 'line',
+          
+          smooth: false,
+          
+          lineStyle: {'type': 'dashed'},
+          symbol: 'none',
+          color: '#6544CC',
+          yAxisIndex: 1,
+          data: [109, 95, 80, 68, 58, 3, 0, 36, 30, 81, 83, 83, 84, 83, 83, 84, 81, 40, 42, 42, 41, 43, 41, 40, 36, 45, 39, 39, 39, 31, 101]
+        },
+        
+        {
+          name: 'Meta Traffic+Branding',
+          type: 'line',
+          
+          smooth: false,
+          
+          lineStyle: {'type': 'dashed'},
+          symbol: 'none',
+          color: '#A4045E',
+          yAxisIndex: 1,
+          data: [492, 475, 575, 592, 600, 697, 695, 782, 805, 587, 441, 439, 475, 346, 518, 520, 456, 517, 517, 556, 679, 676, 626, 416, 506, 495, 615, 597, 480, 489, 388]
+        },
+        
+        {
+          name: 'Meta Conversion',
+          type: 'line',
+          
+          smooth: false,
+          
+          lineStyle: {'type': 'dashed'},
+          symbol: 'none',
+          color: '#BF006C',
+          yAxisIndex: 1,
+          data: [330, 317, 306, 293, 286, 328, 323, 66, 0, 288, 325, 315, 346, 338, 487, 487, 491, 313, 302, 340, 332, 324, 210, 208, 254, 228, 302, 267, 104, 102, 318]
+        },
+        
+      ]
+    };
+
+    // 使用配置项和数据显示图表
+    myChart.setOption(option);
+  </script>
+</body>
+</html>
