@@ -17,7 +17,7 @@
     // 指定图表的配置项和数据
     var option = {
       title: {
-        text: '11_UKSession'
+        text: '11_UKPurchase'
       },
       tooltip: {
         trigger: 'axis',
@@ -50,6 +50,25 @@
         }
       ],
       yAxis: [
+        {
+          type: 'value',
+          name: 'Purchase',
+        //max: 30000,
+          axisLabel: {
+            formatter: '{value}'
+          }
+        },
+        {
+          type: 'value',
+          name: 'Spending',
+          //max: 2500,
+          axisLabel: {
+            formatter: '{value} $',
+          },
+          position: 'right'
+        }
+      ],
+      series: [
       {
         name: 'Others',
         type: 'line',
